@@ -1,0 +1,122 @@
+
+int a = 5;
+int b = 4;
+int c = 3;
+int d = 2;
+int status = 0;
+
+void setup() {
+	pinMode(a, OUTPUT);
+	pinMode(b, OUTPUT);
+	pinMode(c, OUTPUT);
+	pinMode(d, OUTPUT);
+	Serial.begin(9600);
+}
+
+void loop() {
+	switch (status) {
+		case 0:
+			CLEAR();
+			break;
+		case 1:
+			EEN();
+			break;
+		case 2:
+			TWEE();
+			break;
+		case 3:
+			DRIE();
+			break;
+		case 4:
+			VIER();
+			break;
+		case 5:
+			VIJF();
+			break;
+		case 6:
+			ZES();
+			break;
+		case 7:
+			ZEVEN();
+			break;
+		case 8:
+			ACHT();
+			break;
+		case 9:
+			NEGEN();
+			status = 0;
+			break;
+			
+	}
+	delay(1000);
+	status++;
+}
+
+void CLEAR() {
+	digitalWrite(a, LOW);
+	digitalWrite(b, LOW);
+	digitalWrite(c, LOW);
+	digitalWrite(d, LOW);
+}
+void EEN() {
+	digitalWrite(a, LOW);
+	digitalWrite(b, LOW);
+	digitalWrite(c, LOW);
+	digitalWrite(d, HIGH);
+}
+
+void TWEE() {
+	digitalWrite(a, LOW);
+	digitalWrite(b, LOW);
+	digitalWrite(c, HIGH);
+	digitalWrite(d, LOW);
+}
+
+void DRIE() {
+	digitalWrite(a, LOW);
+	digitalWrite(b, LOW);
+	digitalWrite(c, HIGH);
+	digitalWrite(d, HIGH);
+}
+
+
+void VIER() {
+	digitalWrite(a, LOW);
+	digitalWrite(b, HIGH);
+	digitalWrite(c, LOW);
+	digitalWrite(d, LOW);
+}
+
+void VIJF() {
+	digitalWrite(a, LOW);
+	digitalWrite(b, HIGH);
+	digitalWrite(c, LOW);
+	digitalWrite(d, HIGH);
+}
+
+
+void ZES() {
+	digitalWrite(a, LOW);
+	digitalWrite(b, HIGH);
+	digitalWrite(c, HIGH);
+	digitalWrite(d, LOW);
+}
+void ZEVEN() {
+	digitalWrite(a, LOW);
+	digitalWrite(b, HIGH);
+	digitalWrite(c, HIGH);
+	digitalWrite(d, HIGH);
+}
+void ACHT() {
+	digitalWrite(a, HIGH);
+	digitalWrite(b, LOW);
+	digitalWrite(c, LOW);
+	digitalWrite(d, LOW);
+}
+void NEGEN() {
+	digitalWrite(a, HIGH);
+	digitalWrite(b, LOW);
+	digitalWrite(c, LOW);
+	digitalWrite(d, HIGH);
+}
+
