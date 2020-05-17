@@ -1,0 +1,104 @@
+const int T_C = 264;
+const int T_D = 297;
+const int T_E = 330;
+const int T_F = 352;      //frequeties tonen
+const int T_G = 396;
+const int T_A = 440;
+const int T_B = 495;
+const int T_Cc = 528;
+
+const int C = 10;
+const int D = 9;
+const int E = 8;
+const int F = 7;      //pinnummers knoppen
+const int G = 6;
+const int A = 5;
+const int B = 4;
+const int Cc = 3;
+
+const int Buzz = 11;
+const int LED = 13;   //pinnumers lampje en buzzer
+
+void setup()
+{
+	pinMode(LED, OUTPUT);
+	
+	pinMode(C, INPUT);
+	digitalWrite(C, LOW);
+	
+	pinMode(D, INPUT);
+	digitalWrite(D, LOW);
+	
+	pinMode(E, INPUT);
+	digitalWrite(E, LOW);
+	
+	pinMode(F, INPUT);
+	digitalWrite(F, LOW);       // alle knoppen als inputs en laag
+	
+	pinMode(G, INPUT);
+	digitalWrite(G, LOW);
+	
+	pinMode(A, INPUT);
+	digitalWrite(A, LOW);
+	
+	pinMode(B, INPUT);
+	digitalWrite(B, LOW);
+	
+	pinMode (Cc, INPUT);
+	digitalWrite ( Cc, LOW);
+	
+	digitalWrite(LED, LOW);
+}
+
+void loop()
+{
+	while (digitalRead(C) == HIGH)             //als knop C hoog is, zet buzzer aan met frequentie T_c(264) en zet lampje ook aan
+	{
+		tone(Buzz, T_C);
+		digitalWrite(LED, HIGH);
+	}
+	
+	while (digitalRead(D) == HIGH)
+	{
+		tone(Buzz, T_D);
+		digitalWrite(LED, HIGH);
+	}
+	
+	while (digitalRead(E) == HIGH)
+	{
+		tone(Buzz, T_E);
+		digitalWrite(LED, HIGH);
+	}
+	
+	while (digitalRead(F) == HIGH)
+	{
+		tone(Buzz, T_F);
+		digitalWrite(LED, HIGH);
+	}
+	
+	while (digitalRead(G) == HIGH)
+	{
+		tone(Buzz, T_G);
+		digitalWrite(LED, HIGH);
+	}
+	
+	while (digitalRead(A) == HIGH)
+	{
+		tone(Buzz, T_A);
+		digitalWrite(LED, HIGH);
+	}
+	
+	while (digitalRead(B) == HIGH)
+	{
+		tone(Buzz, T_B);
+		digitalWrite(LED, HIGH);
+	}
+	while (digitalRead(Cc) == HIGH)
+	{
+		tone(Buzz, T_Cc);
+		digitalWrite(LED, HIGH);
+	}
+	noTone(Buzz);                 // en anders zet geluid uit en lampje laag en wacht. 
+	digitalWrite(LED, LOW);
+	
+}
